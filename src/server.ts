@@ -13,13 +13,17 @@ export const buildServer = async (): Promise<void> => {
     var schema: GraphQLSchema = buildSchema(`
         type Query {
             hello: String
+            echoMessage(msg: String!): String
         }
     `);
 
     // The root provides a resolver function for each API endpoint
     const hello = () => delayValue(2000, 'Hello world!');
+    const echoMessage = ({ msg }: { msg: string }) => delayValue(2000, msg);
+
     const root = {
         hello,
+        echoMessage,
     };
 
     const app = express();
