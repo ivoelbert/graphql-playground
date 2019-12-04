@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "sourceMap": true,
+        "rootDir": "src/",
+        "outDir": "dist/",
+        "baseUrl": "types",
+        "types": ["jest"],
+        "lib": [
+            "esnext",
+            "DOM"
+        ],
+        "typeRoots": ["types", "./node_modules/@types"],
+        "declaration": true
+    },
+    "include": ["src/**/*.ts"],
+}
